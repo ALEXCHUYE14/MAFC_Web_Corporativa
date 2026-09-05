@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560" role="img" aria-label="Inventario ERP">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1017"/>
+      <stop offset="1" stop-color="#10151f"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#06B6D4" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#06B6D4" stop-opacity="0.35"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.8" cy="0" r="1">
+      <stop offset="0" stop-color="#06B6D4" stop-opacity="0.20"/>
+      <stop offset="0.6" stop-color="#06B6D4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="560" rx="18" fill="url(#bg)"/>
+  <rect width="900" height="560" rx="18" fill="url(#halo)"/>
+  <rect x="0.5" y="0.5" width="899" height="559" rx="18" fill="none" stroke="#232c3a"/>
+
+  <!-- Sidebar -->
+  <rect x="20" y="20" width="200" height="520" rx="14" fill="#0f1622"/>
+  <circle cx="48" cy="52" r="12" fill="url(#glow)"/>
+  <text x="70" y="57" font-family="Space Grotesk, sans-serif" font-size="16" font-weight="700" fill="#fff">MAFC</text>
+  <text x="70" y="72" font-family="Plus Jakarta Sans, sans-serif" font-size="9" letter-spacing="1" fill="#06B6D4">SOFTWARE</text>
+  <rect x="40" y="104" width="160" height="26" rx="8" fill="#06B6D422"/><rect x="52" y="113" width="90" height="8" rx="4" fill="#06B6D4" opacity="0.9"/><rect x="40" y="144" width="160" height="26" rx="8" fill="#151d29"/><rect x="52" y="153" width="82" height="8" rx="4" fill="#33404f" opacity="0.7"/><rect x="40" y="184" width="160" height="26" rx="8" fill="#151d29"/><rect x="52" y="193" width="74" height="8" rx="4" fill="#33404f" opacity="0.7"/><rect x="40" y="224" width="160" height="26" rx="8" fill="#151d29"/><rect x="52" y="233" width="66" height="8" rx="4" fill="#33404f" opacity="0.7"/><rect x="40" y="264" width="160" height="26" rx="8" fill="#151d29"/><rect x="52" y="273" width="58" height="8" rx="4" fill="#33404f" opacity="0.7"/><rect x="40" y="304" width="160" height="26" rx="8" fill="#151d29"/><rect x="52" y="313" width="50" height="8" rx="4" fill="#33404f" opacity="0.7"/>
+
+  <!-- Topbar -->
+  <text x="250" y="52" font-family="Space Grotesk, sans-serif" font-size="22" font-weight="700" fill="#fff">Inventario ERP</text>
+  <rect x="250" y="64" width="132" height="22" rx="11" fill="#06B6D4" opacity="0.16"/>
+  <circle cx="266" cy="75" r="4" fill="#06B6D4"/>
+  <text x="278" y="79" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#06B6D4">Multi-sucursal</text>
+  <circle cx="848" cy="52" r="18" fill="#182130"/>
+  <circle cx="848" cy="52" r="18" fill="none" stroke="#06B6D4" stroke-opacity="0.5"/>
+  <circle cx="848" cy="52" r="8" fill="#06B6D4" opacity="0.7"/>
+
+  <!-- KPIs -->
+  
+        <rect x="250" y="96" width="190" height="92" rx="14" fill="#161d2b" stroke="#28313f"/>
+        <rect x="266" y="112" width="34" height="34" rx="9" fill="#06B6D4" opacity="0.16"/>
+        <circle cx="283" cy="129" r="7" fill="#06B6D4"/>
+        <text x="266" y="166" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#8a95a6">SKU</text>
+        <text x="266" y="148" font-family="Space Grotesk, sans-serif" font-size="24" font-weight="700" fill="#ffffff">5,120</text>
+
+        <rect x="456" y="96" width="190" height="92" rx="14" fill="#161d2b" stroke="#28313f"/>
+        <rect x="472" y="112" width="34" height="34" rx="9" fill="#06B6D4" opacity="0.16"/>
+        <circle cx="489" cy="129" r="7" fill="#06B6D4"/>
+        <text x="472" y="166" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#8a95a6">Sucursales</text>
+        <text x="472" y="148" font-family="Space Grotesk, sans-serif" font-size="24" font-weight="700" fill="#ffffff">4</text>
+
+        <rect x="662" y="96" width="190" height="92" rx="14" fill="#161d2b" stroke="#28313f"/>
+        <rect x="678" y="112" width="34" height="34" rx="9" fill="#06B6D4" opacity="0.16"/>
+        <circle cx="695" cy="129" r="7" fill="#06B6D4"/>
+        <text x="678" y="166" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#8a95a6">Stock</text>
+        <text x="678" y="148" font-family="Space Grotesk, sans-serif" font-size="24" font-weight="700" fill="#ffffff">97%</text>
+
+  <!-- Panel chart -->
+  <rect x="250" y="204" width="380" height="336" rx="16" fill="#131a26" stroke="#232c3a"/>
+  <text x="272" y="236" font-family="Plus Jakarta Sans, sans-serif" font-size="13" fill="#c3ccd9" font-weight="600">Rendimiento</text>
+  <g transform="translate(272,262)"><path d="M 0.0 20.0 L 48.0 151.2 L 96.0 72.5 L 144.0 184.1 L 192.0 98.8 L 240.0 216.9 L 288.0 138.1 L 336.0 230.0 L 336.0 230.0 L 0.0 230.0 Z" fill="#06B6D4" opacity="0.12"/><path d="M 0.0 20.0 L 48.0 151.2 L 96.0 72.5 L 144.0 184.1 L 192.0 98.8 L 240.0 216.9 L 288.0 138.1 L 336.0 230.0" fill="none" stroke="#06B6D4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="0.0" cy="20.0" r="3.5" fill="#06B6D4"/>
+<circle cx="48.0" cy="151.2" r="3.5" fill="#06B6D4"/>
+<circle cx="96.0" cy="72.5" r="3.5" fill="#06B6D4"/>
+<circle cx="144.0" cy="184.1" r="3.5" fill="#06B6D4"/>
+<circle cx="192.0" cy="98.8" r="3.5" fill="#06B6D4"/>
+<circle cx="240.0" cy="216.9" r="3.5" fill="#06B6D4"/>
+<circle cx="288.0" cy="138.1" r="3.5" fill="#06B6D4"/>
+<circle cx="336.0" cy="230.0" r="3.5" fill="#06B6D4"/></g>
+
+  <!-- Panel lista -->
+  <rect x="646" y="204" width="234" height="336" rx="16" fill="#131a26" stroke="#232c3a"/>
+  <text x="666" y="236" font-family="Plus Jakarta Sans, sans-serif" font-size="13" fill="#c3ccd9" font-weight="600">Actividad</text>
+  <g transform="translate(666,252)"><rect x="0" y="0" width="200" height="40" rx="6" fill="#1c2331"/>
+<circle cx="18" cy="20.0" r="8" fill="#06B6D4" opacity="0.8"/>
+<rect x="36" y="11.0" width="70" height="7" rx="3.5" fill="#3a475a"/>
+<rect x="36" y="22.0" width="44" height="6" rx="3" fill="#2a3342"/>
+<rect x="132" y="11.0" width="54" height="18" rx="9" fill="#06B6D4" opacity="0.18"/>
+<rect x="0" y="48" width="200" height="40" rx="6" fill="#1c2331"/>
+<circle cx="18" cy="68.0" r="8" fill="#06B6D4" opacity="0.8"/>
+<rect x="36" y="59.0" width="70" height="7" rx="3.5" fill="#3a475a"/>
+<rect x="36" y="70.0" width="44" height="6" rx="3" fill="#2a3342"/>
+<rect x="132" y="59.0" width="54" height="18" rx="9" fill="#06B6D4" opacity="0.18"/>
+<rect x="0" y="96" width="200" height="40" rx="6" fill="#1c2331"/>
+<circle cx="18" cy="116.0" r="8" fill="#06B6D4" opacity="0.8"/>
+<rect x="36" y="107.0" width="70" height="7" rx="3.5" fill="#3a475a"/>
+<rect x="36" y="118.0" width="44" height="6" rx="3" fill="#2a3342"/>
+<rect x="132" y="107.0" width="54" height="18" rx="9" fill="#06B6D4" opacity="0.18"/>
+<rect x="0" y="144" width="200" height="40" rx="6" fill="#1c2331"/>
+<circle cx="18" cy="164.0" r="8" fill="#06B6D4" opacity="0.8"/>
+<rect x="36" y="155.0" width="70" height="7" rx="3.5" fill="#3a475a"/>
+<rect x="36" y="166.0" width="44" height="6" rx="3" fill="#2a3342"/>
+<rect x="132" y="155.0" width="54" height="18" rx="9" fill="#06B6D4" opacity="0.18"/>
+<rect x="0" y="192" width="200" height="40" rx="6" fill="#1c2331"/>
+<circle cx="18" cy="212.0" r="8" fill="#06B6D4" opacity="0.8"/>
+<rect x="36" y="203.0" width="70" height="7" rx="3.5" fill="#3a475a"/>
+<rect x="36" y="214.0" width="44" height="6" rx="3" fill="#2a3342"/>
+<rect x="132" y="203.0" width="54" height="18" rx="9" fill="#06B6D4" opacity="0.18"/>
+<rect x="0" y="240" width="200" height="40" rx="6" fill="#1c2331"/>
+<circle cx="18" cy="260.0" r="8" fill="#06B6D4" opacity="0.8"/>
+<rect x="36" y="251.0" width="70" height="7" rx="3.5" fill="#3a475a"/>
+<rect x="36" y="262.0" width="44" height="6" rx="3" fill="#2a3342"/>
+<rect x="132" y="251.0" width="54" height="18" rx="9" fill="#06B6D4" opacity="0.18"/></g>
+</svg>

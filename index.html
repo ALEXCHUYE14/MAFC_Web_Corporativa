@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MAFC · Software a Medida para Negocios | Soluciones Digitales</title>
+  <meta name="description" content="MAFC diseña, desarrolla e implementa software a medida: sistemas POS, CRM y plataformas de gestión comercial para ópticas, restaurantes, bodegas, fisioterapia e inventarios. Cotiza por WhatsApp." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0B1220" />
+  <meta name="author" content="MAFC — Soluciones Digitales &amp; Software a Medida" />
+  <link rel="canonical" href="https://www.mafcsoluciones.pe/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MAFC · Software Studio" />
+  <meta property="og:locale" content="es_PE" />
+  <meta property="og:url" content="https://www.mafcsoluciones.pe/" />
+  <meta property="og:title" content="MAFC · Software a Medida para Negocios" />
+  <meta property="og:description" content="Diseñamos, desarrollamos e implementamos sistemas POS, CRM y plataformas de gestión comercial optimizadas para escalar tus ventas." />
+  <meta property="og:image" content="https://www.mafcsoluciones.pe/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Sistemas de software a medida desarrollados por MAFC" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MAFC · Software a Medida para Negocios" />
+  <meta name="twitter:description" content="Sistemas POS, CRM y plataformas de gestión comercial a medida. Cotiza por WhatsApp." />
+  <meta name="twitter:image" content="https://www.mafcsoluciones.pe/assets/og-image.jpg" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+
+  <!-- Google Analytics 4 -->
+  <!-- ⚠️ Reemplaza G-XXXXXXXXXX por tu Measurement ID real (ver README.md) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- Datos estructurados (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "MAFC — Soluciones Digitales & Software a Medida",
+    "alternateName": "MAFC Software Studio",
+    "url": "https://www.mafcsoluciones.pe/",
+    "logo": "https://www.mafcsoluciones.pe/public/logo/logo.png",
+    "image": "https://www.mafcsoluciones.pe/assets/og-image.jpg",
+    "description": "Diseño, desarrollo e implementación de software a medida: sistemas POS, CRM y plataformas de gestión comercial.",
+    "telephone": "+51924996961",
+    "priceRange": "$$",
+    "areaServed": "PE",
+    "sameAs": ["https://www.facebook.com/profile.php?id=61591894984374"],
+    "makesOffer": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Venta de Software Llave en Mano" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desarrollo de Software a Medida" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Implementación Comercial" } }
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CSS (CDN) + configuración de marca -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy:     '#0B1220',
+            bgsoft:   '#F3F7FC',
+            surface:  '#FFFFFF',
+            border:   '#D7E3F0',
+            accent:   '#2563EB',
+            accent2:  '#3B82F6',
+            muted:    '#5B6B82',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            head: ['"Space Grotesk"', '"Syne"', 'sans-serif'],
+          },
+          screens: { xs: '375px' },
+          maxWidth: { '8xl': '1200px' },
+        }
+      }
+    }
+  </script>
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body class="font-sans">
+  <!-- =====================  NAVBAR  ===================== -->
+  <header id="nav" class="nav">
+    <nav class="container-x flex items-center justify-between h-[72px]" aria-label="Navegación principal">
+      <!-- Logo -->
+      <a href="#inicio" class="flex items-center gap-3 group" aria-label="MAFC inicio">
+        <span class="relative inline-flex items-center justify-center w-10 h-10 rounded-xl overflow-hidden shrink-0">
+          <img src="public/logo/logo.png" alt="Logo MAFC" width="40" height="40" class="w-full h-full object-cover" />
+        </span>
+        <span class="leading-tight">
+          <span class="font-head font-bold text-lg tracking-tight text-white">MAFC</span>
+          <span class="badge ml-2 align-middle">Software Studio</span>
+        </span>
+      </a>
+
+      <!-- Menú desktop -->
+      <div class="desktop-nav items-center gap-8">
+        <a href="#inicio"     class="nav-link" data-section="inicio">Inicio</a>
+        <a href="#soluciones" class="nav-link" data-section="soluciones">Soluciones</a>
+        <a href="#portafolio" class="nav-link" data-section="portafolio">Portafolio</a>
+        <a href="#planes"     class="nav-link" data-section="planes">Planes</a>
+        <a href="#metodologia"class="nav-link" data-section="metodologia">Metodología</a>
+        <a href="#contacto"   class="nav-link" data-section="contacto">Contacto</a>
+      </div>
+
+      <!-- CTA desktop -->
+      <a href="https://wa.me/51924996961?text=Hola%20MAFC,%20quisiera%20cotizar%20un%20software%20a%20medida"
+         target="_blank" rel="noopener"
+         class="desktop-nav btn btn-primary btn-inline">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.7.9-.1.1-.3.2-.5.1-.7-.3-1.4-.6-2-1.4-.2-.3.2-.3.5-.9.1-.2 0-.3 0-.5s-.5-1.3-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.7.7-.9 1.7-.5 2.7.5 1.4 1.5 2.6 2.9 3.4 1.9 1 1.9.7 2.3.7.5 0 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.1-.4-.2Z"/></svg>
+        Cotizar por WhatsApp
+      </a>
+
+      <!-- Trigger móvil -->
+      <button id="burger" class="mobile-trigger burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobilePanel">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Overlay + panel móvil -->
+  <div id="mobileOverlay" class="mobile-overlay" aria-hidden="true"></div>
+  <aside id="mobilePanel" class="mobile-panel" role="dialog" aria-modal="true" aria-label="Menú">
+    <div class="flex items-center justify-between px-6 py-5 border-b border-[#232c3a]">
+      <span class="font-head font-bold text-white">MAFC</span>
+      <button data-close-menu aria-label="Cerrar menú" class="w-9 h-9 rounded-full grid place-items-center border border-white/20 text-white">✕</button>
+    </div>
+    <nav class="flex flex-col gap-2 px-6 py-8 flex-1" aria-label="Navegación móvil">
+      <a href="#inicio"      class="mobile-link">Inicio</a>
+      <a href="#soluciones"  class="mobile-link">Soluciones</a>
+      <a href="#portafolio"  class="mobile-link">Portafolio</a>
+      <a href="#planes"      class="mobile-link">Planes</a>
+      <a href="#metodologia" class="mobile-link">Metodología</a>
+      <a href="#contacto"    class="mobile-link">Contacto</a>
+    </nav>
+    <div class="px-6 pb-8">
+      <a href="https://wa.me/51924996961?text=Hola%20MAFC,%20quisiera%20cotizar%20un%20software%20a%20medida"
+         target="_blank" rel="noopener" class="btn btn-wa w-full">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm4.4 12c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.7.9-.1.1-.3.2-.5.1-.7-.3-1.4-.6-2-1.4-.2-.3.2-.3.5-.9.1-.2 0-.3 0-.5s-.5-1.3-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.7.7-.9 1.7-.5 2.7.5 1.4 1.5 2.6 2.9 3.4 1.9 1 1.9.7 2.3.7.5 0 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.1-.4-.2Z"/></svg>
+        Cotizar por WhatsApp
+      </a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- =====================  HERO  ===================== -->
+    <section id="inicio" class="section pt-32 md:pt-40 relative">
+      <div class="container-x grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        <!-- Columna texto -->
+        <div class="max-w-xl">
+          <span class="pill reveal">
+            <span class="dot"></span> Software Studio · POS · CRM · ERP a medida
+          </span>
+
+          <h1 class="reveal mt-6 text-4xl xs:text-5xl md:text-6xl font-head font-extrabold leading-[1.05]">
+            <span class="text-gradient">Software a Medida</span><br />
+            que impulsa el crecimiento de tu negocio
+          </h1>
+
+          <p class="reveal text-muted text-lg mt-6" data-delay="1">
+            Diseñamos, desarrollamos e implementamos sistemas POS, CRM y plataformas de
+            gestión comercial optimizadas para escalar tus ventas.
+          </p>
+
+          <div class="reveal flex flex-col sm:flex-row gap-3 mt-8" data-delay="2">
+            <a href="https://wa.me/51924996961?text=Hola%20MAFC,%20quisiera%20agendar%20una%20demo%20de%20su%20software"
+               target="_blank" rel="noopener" class="btn btn-primary btn-inline">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm4.4 12c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.7.9-.1.1-.3.2-.5.1-.7-.3-1.4-.6-2-1.4-.2-.3.2-.3.5-.9.1-.2 0-.3 0-.5s-.5-1.3-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.7.7-.9 1.7-.5 2.7.5 1.4 1.5 2.6 2.9 3.4 1.9 1 1.9.7 2.3.7.5 0 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.1-.4-.2Z"/></svg>
+              Agendar Demo por WhatsApp
+            </a>
+            <a href="#portafolio" class="btn btn-ghost-invert btn-inline">
+              Explorar Proyectos
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <!-- Prueba social / métricas -->
+          <div class="reveal grid grid-cols-3 gap-4 mt-10" data-delay="3">
+            <div class="surface p-4 text-center">
+              <div class="font-head font-bold text-white text-lg">5+</div>
+              <div class="text-muted text-xs mt-1">Sistemas en Producción</div>
+            </div>
+            <div class="surface p-4 text-center">
+              <div class="font-head font-bold text-white text-lg">5</div>
+              <div class="text-muted text-xs mt-1">Rubros Distintos Atendidos</div>
+            </div>
+            <div class="surface p-4 text-center">
+              <div class="font-head font-bold text-white text-lg">100%</div>
+              <div class="text-muted text-xs mt-1">Código Propio a Medida</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna visual: mockup principal -->
+        <div class="reveal relative" data-delay="2">
+          <div class="card p-3 hero-media">
+            <img src="public/img/ventas-bodegas.jpeg" alt="Captura real del sistema de ventas y control de inventario para bodegas desarrollado por MAFC" loading="eager" fetchpriority="high" width="1600" height="1600" class="rounded-xl w-full" />
+          </div>
+          <!-- tarjetas flotantes -->
+          <div class="glass absolute -left-3 bottom-8 rounded-2xl px-4 py-3 hidden sm:flex items-center gap-3">
+            <span class="w-9 h-9 rounded-lg grid place-items-center" style="background:rgba(16,185,129,.15);color:#10B981">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div class="leading-tight">
+              <div class="text-white text-sm font-semibold">Ventas en tiempo real</div>
+              <div class="text-muted text-xs">Reportería integrada</div>
+            </div>
+          </div>
+          <div class="glass absolute -right-2 -top-4 rounded-2xl px-4 py-3 hidden sm:flex items-center gap-3">
+            <span class="w-9 h-9 rounded-lg grid place-items-center" style="background:rgba(37,99,235,.15);color:#2563EB">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20" stroke-linecap="round"/></svg>
+            </span>
+            <div class="leading-tight">
+              <div class="text-white text-sm font-semibold">Multi-sucursal</div>
+              <div class="text-muted text-xs">Control centralizado</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marquee social proof -->
+      <div class="container-x mt-16">
+        <div class="marquee py-4 border-y border-[#232c3a]">
+          <div class="marquee-track text-muted font-head font-semibold text-sm uppercase tracking-wider">
+            <span>Ópticas</span><span>·</span><span>Fisioterapia</span><span>·</span><span>Restaurantes</span><span>·</span><span>Bodegas</span><span>·</span><span>Retail</span><span>·</span><span>Multi-sucursal</span><span>·</span><span>Inventarios</span><span>·</span>
+            <span>Ópticas</span><span>·</span><span>Fisioterapia</span><span>·</span><span>Restaurantes</span><span>·</span><span>Bodegas</span><span>·</span><span>Retail</span><span>·</span><span>Multi-sucursal</span><span>·</span><span>Inventarios</span><span>·</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================  CLIENTES  ===================== -->
+    <section aria-label="Clientes" class="py-10" style="border-bottom:1px solid var(--border-soft)">
+      <div class="container-x">
+        <p class="reveal text-center text-muted text-xs uppercase tracking-wider font-semibold mb-6">Sistemas reales, funcionando hoy para</p>
+        <div class="reveal flex flex-wrap items-center justify-center gap-x-10 gap-y-4" data-delay="1">
+          <span class="client-badge">Óptica Mavie</span>
+          <span class="client-badge">Movimiento Koray</span>
+          <span class="client-badge">Antojitos al Paso</span>
+          <span class="client-badge">Comercializadora T&amp;E S.A.S.</span>
+          <span class="client-badge">Comercial Ruiz</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================  SOLUCIONES / SERVICIOS  ===================== -->
+    <section id="soluciones" class="section">
+      <div class="container-x">
+        <div class="max-w-2xl reveal">
+          <span class="eyebrow">Soluciones</span>
+          <h2 class="mt-4 text-3xl md:text-4xl font-head font-bold">Software llave en mano y a la medida de tu operación</h2>
+          <p class="text-muted mt-4">Tres líneas de trabajo pensadas para negocios que quieren dejar atrás las hojas de cálculo y operar con sistemas propios, escalables y con soporte real.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5 mt-12">
+          <!-- Servicio 1 -->
+          <article class="card p-7 reveal">
+            <div class="svc-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M3 8h18M8 21h8M12 17v4" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="font-head font-semibold text-xl mt-5">Venta de Software Llave en Mano</h3>
+            <p class="text-muted mt-3 text-sm">Sistemas listos para operar —POS, CRM y gestión comercial— que adaptamos a tu rubro sin costos de desarrollo desde cero.</p>
+          </article>
+          <!-- Servicio 2 -->
+          <article class="card p-7 reveal" data-delay="1">
+            <div class="svc-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3" stroke-linecap="round"/><path d="M9 12h6M12 9v6" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="font-head font-semibold text-xl mt-5">Desarrollo a Medida</h3>
+            <p class="text-muted mt-3 text-sm">Construimos plataformas web y sistemas de gestión desde el requerimiento exacto de tu negocio, con arquitectura escalable.</p>
+          </article>
+          <!-- Servicio 3 -->
+          <article class="card p-7 reveal" data-delay="2">
+            <div class="svc-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21h18M6 21V9l6-4 6 4v12M10 21v-6h4v6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="font-head font-semibold text-xl mt-5">Implementación Comercial</h3>
+            <p class="text-muted mt-3 text-sm">Puesta en marcha, migración de datos y capacitación de tu equipo para que el sistema genere valor desde el primer día.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================  PORTAFOLIO  ===================== -->
+    <section id="portafolio" class="section">
+      <div class="container-x">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 reveal">
+          <div class="max-w-2xl">
+            <span class="eyebrow">Portafolio</span>
+            <h2 class="mt-4 text-3xl md:text-4xl font-head font-bold">Proyectos reales, problemas resueltos</h2>
+            <p class="text-muted mt-4">Una selección de sistemas que hemos diseñado e implementado para distintos rubros. Filtra por categoría y explora capturas o demos en video.</p>
+          </div>
+        </div>
+
+        <!-- Badges de confianza -->
+        <div class="reveal flex flex-wrap gap-3 mt-6" data-delay="1">
+          <span class="trust-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Sistemas reales en producción
+          </span>
+          <span class="trust-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Código propio, sin plantillas
+          </span>
+          <span class="trust-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Soporte directo con quien lo construye
+          </span>
+        </div>
+
+        <!-- Filtros -->
+        <div class="flex flex-wrap gap-2 mt-8 reveal" role="tablist" aria-label="Filtrar proyectos">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="pos">POS</button>
+          <button class="filter-btn" data-filter="crm">CRM</button>
+          <button class="filter-btn" data-filter="salud">Salud</button>
+          <button class="filter-btn" data-filter="inventario">Inventario</button>
+          <button class="filter-btn" data-filter="retail">Retail</button>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8" id="projectGrid">
+
+          <!-- Proyecto 1 -->
+          <article class="card project-card" data-category="crm pos salud">
+            <div class="project-media">
+              <button type="button" class="lightbox-trigger" aria-label="Ver en grande: Gestión e Historias Clínicas para Ópticas">
+                <img src="public/img/gestion-opticas.png" alt="Captura real del sistema de gestión e historias clínicas para la óptica Óptica Mavie" loading="lazy" width="1365" height="619" />
+                <span class="zoom-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6" stroke-linecap="round"/></svg>
+                </span>
+              </button>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="tag tag-accent">Ópticas</span><span class="tag">Salud</span><span class="tag">POS</span>
+              </div>
+              <h3 class="font-head font-semibold text-lg">Gestión e Historias Clínicas para Ópticas</h3>
+              <p class="text-muted text-sm mt-2">CRM + POS que centraliza pacientes, mediciones, recetas y ventas de armazones en una sola plataforma. Sistema real en producción para <strong>Óptica Mavie</strong>.</p>
+            </div>
+          </article>
+
+          <!-- Proyecto 2 (con video) -->
+          <article class="card project-card" data-category="crm salud">
+            <div class="project-media">
+              <img src="public/img/gestion-fisioterapia.jpeg" alt="Capturas reales del sistema de gestión e historias clínicas para el centro de fisioterapia Movimiento Koray" loading="lazy" width="1600" height="1600" />
+              <button class="play-btn"
+                      data-video="public/video/demo-fisioterapia.mp4"
+                      data-poster="public/img/gestion-fisioterapia.jpeg"
+                      data-title="Demo · Sistema para Centros de Fisioterapia"
+                      aria-label="Reproducir demo en video de Fisioterapia">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="tag tag-accent">Fisioterapia</span><span class="tag">Citas</span><span class="tag">CRM</span>
+              </div>
+              <h3 class="font-head font-semibold text-lg">Gestión e Historias Clínicas para Fisioterapia</h3>
+              <p class="text-muted text-sm mt-2">Agenda de citas, historias clínicas por sesión y seguimiento de tratamientos. Sistema real en producción para <strong>Movimiento Koray</strong>.</p>
+              <button class="btn btn-ghost btn-inline mt-4 text-sm"
+                      data-video="public/video/demo-fisioterapia.mp4"
+                      data-poster="public/img/gestion-fisioterapia.jpeg"
+                      data-title="Demo · Sistema para Centros de Fisioterapia">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                Reproducir Demo en Video
+              </button>
+            </div>
+          </article>
+
+          <!-- Proyecto 3 -->
+          <article class="card project-card" data-category="pos">
+            <div class="project-media">
+              <button type="button" class="lightbox-trigger" aria-label="Ver en grande: POS y CRM para Restaurantes y Comida Rápida">
+                <img src="public/img/pos-restaurantes.jpeg" alt="Capturas reales del sistema POS y CRM para el restaurante Antojitos al Paso" loading="lazy" width="1600" height="1600" />
+                <span class="zoom-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6" stroke-linecap="round"/></svg>
+                </span>
+              </button>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="tag tag-accent">Restaurantes</span><span class="tag">Control de Pedidos</span><span class="tag">POS</span>
+              </div>
+              <h3 class="font-head font-semibold text-lg">POS y CRM para Restaurantes y Comida Rápida</h3>
+              <p class="text-muted text-sm mt-2">Control de mesas, comandas por área, cocina en tiempo real y reportes de ventas por producto y turno. Sistema real en producción para <strong>Antojitos al Paso</strong>.</p>
+            </div>
+          </article>
+
+          <!-- Proyecto 4 -->
+          <article class="card project-card" data-category="inventario">
+            <div class="project-media">
+              <button type="button" class="lightbox-trigger" aria-label="Ver en grande: Control de Inventarios y Gestión Comercial">
+                <img src="public/img/control-inventarios.jpeg" alt="Capturas reales del sistema web de control de inventarios desarrollado para Comercializadora T&amp;E S.A.S." loading="lazy" width="1600" height="1600" />
+                <span class="zoom-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6" stroke-linecap="round"/></svg>
+                </span>
+              </button>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="tag tag-accent">Inventario</span><span class="tag">ERP</span><span class="tag">Multi-sucursal</span>
+              </div>
+              <h3 class="font-head font-semibold text-lg">Control de Inventarios y Gestión Comercial</h3>
+              <p class="text-muted text-sm mt-2">Kardex con costo promedio ponderado, cierre contable por periodo y reportería consolidada. Sistema real en producción para <strong>Comercializadora T&amp;E S.A.S.</strong></p>
+            </div>
+          </article>
+
+          <!-- Proyecto 5 (con video) -->
+          <article class="card project-card" data-category="pos crm retail inventario">
+            <div class="project-media">
+              <img src="public/img/ventas-bodegas.jpeg" alt="Capturas reales del sistema de ventas y control de inventario para la bodega Comercial Ruiz" loading="lazy" width="1600" height="1600" />
+              <button class="play-btn"
+                      data-video="public/video/demo-bodega.mp4"
+                      data-poster="public/img/ventas-bodegas.jpeg"
+                      data-title="Demo · Sistema de Ventas para Bodegas"
+                      aria-label="Reproducir demo en video de Bodegas">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="tag tag-accent">Retail</span><span class="tag">Bodegas</span><span class="tag">Inventario Rápido</span>
+              </div>
+              <h3 class="font-head font-semibold text-lg">Ventas y Control de Inventario para Bodegas</h3>
+              <p class="text-muted text-sm mt-2">POS + CRM con venta rápida por código, control de inventario al instante y cierre de caja diario. Sistema real en producción para <strong>Comercial Ruiz</strong>.</p>
+              <button class="btn btn-ghost btn-inline mt-4 text-sm"
+                      data-video="public/video/demo-bodega.mp4"
+                      data-poster="public/img/ventas-bodegas.jpeg"
+                      data-title="Demo · Sistema de Ventas para Bodegas">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                Reproducir Demo en Video
+              </button>
+            </div>
+          </article>
+
+          <!-- Tarjeta CTA -->
+          <article class="card project-card grid place-items-center text-center p-8" data-category="all">
+            <div>
+              <div class="svc-icon mx-auto">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="font-head font-semibold text-lg mt-4">¿Tu rubro no está aquí?</h3>
+              <p class="text-muted text-sm mt-2">Construimos el sistema exacto que tu negocio necesita.</p>
+              <a href="https://wa.me/51924996961?text=Hola%20MAFC,%20quisiera%20cotizar%20un%20software%20a%20medida"
+                 target="_blank" rel="noopener" class="btn btn-primary btn-inline mt-5 text-sm">Conversemos tu proyecto</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================  PLANES  ===================== -->
+    <section id="planes" class="section">
+      <div class="container-x">
+        <div class="max-w-2xl reveal">
+          <span class="eyebrow">Planes</span>
+          <h2 class="mt-4 text-3xl md:text-4xl font-head font-bold">Un punto de partida para cada etapa de tu negocio</h2>
+          <p class="text-muted mt-4">Cada proyecto es distinto, así que la cotización final depende del alcance real de tu negocio. Estas son las tres formas más comunes en que trabajamos contigo.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-6 mt-12 items-stretch">
+          <!-- Plan 1 -->
+          <article class="card plan-card p-7 reveal flex flex-col">
+            <h3 class="font-head font-semibold text-xl">Software Llave en Mano</h3>
+            <p class="text-muted text-sm mt-2">Ideal si quieres empezar rápido con un sistema ya construido y adaptado a tu rubro.</p>
+            <div class="flex flex-col gap-3 mt-6 flex-1">
+              <div class="plan-feature"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sistema ya construido, adaptado a tu operación</span></div>
+              <div class="plan-feature"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Implementación más rápida que un desarrollo desde cero</span></div>
+              <div class="plan-feature"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Capacitación de tu equipo incluida</span></div>
+              <div class="plan-feature"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Soporte técnico post-venta</span></div>
+            </div>
+            <a href="https://wa.me/51924996961?text=Hola%20MAFC,%20me%20interesa%20el%20plan%20Software%20Llave%20en%20Mano"
+               target="_blank" rel="noopener" class="btn btn-ghost btn-inline w-full justify-center mt-7">Cotizar este plan</a>
+          </article>
+
+          <!-- Plan 2 (destacado) -->
+          <article class="card plan-card featured p-7 reveal flex flex-col" data-delay="1">
+            <span class="plan-badge w-fit">Recomendado</span>
+            <h3 class="font-head font-semibold text-xl mt-4">Desarrollo a Medida</h3>
+            <p class="text-muted text-sm mt-2">Para operaciones con procesos específicos que un sistema genérico no puede resolver.</p>
+            <div class="flex flex-col gap-3 mt-6 flex-1">
+              <div class="plan-feature"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Análisis y diseño UX/UI a tu medida</span></div>
+              <div class="plan-feature"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Funcionalidades exclusivas para tu operación</span></div>
+              <div class="plan-feature"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Integraciones con tus herramientas actuales</span></div>
+              <div class="plan-feature"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Arquitectura escalable a futuro</span></div>
+            </div>
+            <a href="https://wa.me/51924996961?text=Hola%20MAFC,%20me%20interesa%20el%20plan%20Desarrollo%20a%20Medida"
+               target="_blank" rel="noopener" class="btn btn-primary btn-inline w-full justify-center mt-7">Cotizar este plan</a>
+          </article>
+
+          <!-- Plan 3 -->
+          <article class="card plan-card p-7 reveal flex flex-col" data-delay="2">
+            <h3 class="font-head font-semibold text-xl">Multi-sucursal / Empresarial</h3>
+            <p class="text-muted text-sm mt-2">Para negocios con varias sedes que necesitan información consolidada y en tiempo real.</p>
+            <div class="flex flex-col gap-3 mt-6 flex-1">
+              <div class="plan-feature"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Control centralizado multi-sucursal y multi-usuario</span></div>
+              <div class="plan-feature"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Reportería consolidada entre todas tus sedes</span></div>
+              <div class="plan-feature"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Soporte prioritario</span></div>
+              <div class="plan-feature"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Mejoras continuas según crece tu operación</span></div>
+            </div>
+            <a href="https://wa.me/51924996961?text=Hola%20MAFC,%20me%20interesa%20el%20plan%20Multi-sucursal%20/%20Empresarial"
+               target="_blank" rel="noopener" class="btn btn-ghost btn-inline w-full justify-center mt-7">Cotizar este plan</a>
+          </article>
+        </div>
+
+        <p class="reveal text-center text-muted text-xs mt-8" data-delay="3">Los precios se definen según el alcance de cada proyecto. Cuéntanos tu caso y te enviamos una propuesta clara antes de empezar.</p>
+      </div>
+    </section>
+
+    <!-- =====================  METODOLOGÍA  ===================== -->
+    <section id="metodologia" class="section">
+      <div class="container-x">
+        <div class="max-w-2xl reveal">
+          <span class="eyebrow">Metodología</span>
+          <h2 class="mt-4 text-3xl md:text-4xl font-head font-bold">¿Por qué elegir MAFC?</h2>
+          <p class="text-muted mt-4">Un proceso claro de principio a fin: entendemos tu operación, la construimos en software y te acompañamos después de la entrega.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
+          <!-- Paso 1 -->
+          <article class="card p-7 reveal">
+            <div class="flex items-center justify-between">
+              <div class="svc-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/></svg>
+              </div>
+              <span class="step-num">01</span>
+            </div>
+            <h3 class="font-head font-semibold text-lg mt-5">Análisis y Diseño UX/UI</h3>
+            <p class="text-muted text-sm mt-2">Levantamos requerimientos y diseñamos flujos e interfaces centradas en tu operación real.</p>
+          </article>
+          <!-- Paso 2 -->
+          <article class="card p-7 reveal" data-delay="1">
+            <div class="flex items-center justify-between">
+              <div class="svc-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span class="step-num">02</span>
+            </div>
+            <h3 class="font-head font-semibold text-lg mt-5">Desarrollo a Medida</h3>
+            <p class="text-muted text-sm mt-2">Programamos con arquitectura escalable y buenas prácticas, iterando contigo en cada avance.</p>
+          </article>
+          <!-- Paso 3 -->
+          <article class="card p-7 reveal" data-delay="2">
+            <div class="flex items-center justify-between">
+              <div class="svc-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10 12 2 2 10M6 8v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 20v-6h4v6" stroke-linecap="round"/></svg>
+              </div>
+              <span class="step-num">03</span>
+            </div>
+            <h3 class="font-head font-semibold text-lg mt-5">Implementación &amp; Capacitación</h3>
+            <p class="text-muted text-sm mt-2">Migramos datos, ponemos en marcha el sistema y capacitamos a tu equipo paso a paso.</p>
+          </article>
+          <!-- Paso 4 -->
+          <article class="card p-7 reveal" data-delay="3">
+            <div class="flex items-center justify-between">
+              <div class="svc-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 12.2A9 9 0 1 1 12 3" stroke-linecap="round"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span class="step-num">04</span>
+            </div>
+            <h3 class="font-head font-semibold text-lg mt-5">Soporte Técnico Post-Venta</h3>
+            <p class="text-muted text-sm mt-2">Acompañamiento continuo, mejoras y soporte para que tu sistema siga creciendo contigo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================  PREGUNTAS FRECUENTES  ===================== -->
+    <section id="faq" class="section">
+      <div class="container-x">
+        <div class="max-w-2xl reveal">
+          <span class="eyebrow">Preguntas Frecuentes</span>
+          <h2 class="mt-4 text-3xl md:text-4xl font-head font-bold">Resolvemos tus dudas antes de cotizar</h2>
+          <p class="text-muted mt-4">Si tienes otra pregunta que no está aquí, escríbenos directo por WhatsApp.</p>
+        </div>
+
+        <div class="mt-10 reveal">
+          <details class="faq-item">
+            <summary>
+              ¿Cuánto tiempo toma implementar un sistema?
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+              </span>
+            </summary>
+            <p>Depende del alcance: un software llave en mano puede quedar operativo en pocos días, mientras que un desarrollo a medida toma más tiempo según las funcionalidades que necesites. Te damos un tiempo estimado claro dentro de la cotización, antes de empezar.</p>
+          </details>
+          <details class="faq-item">
+            <summary>
+              ¿El sistema funciona en celular, tablet y computadora?
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+              </span>
+            </summary>
+            <p>Sí. Nuestros sistemas son plataformas web responsivas: se usan desde el navegador, sin instalar nada, y se adaptan a computadora, tablet o celular.</p>
+          </details>
+          <details class="faq-item">
+            <summary>
+              ¿Migran los datos que ya tengo en Excel u otro sistema?
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+              </span>
+            </summary>
+            <p>Sí, la migración de tu información actual (clientes, inventario, ventas) forma parte del proceso de implementación, para que empieces a operar sin perder tu historial.</p>
+          </details>
+          <details class="faq-item">
+            <summary>
+              ¿Qué pasa si necesito soporte después de la entrega?
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+              </span>
+            </summary>
+            <p>Ofrecemos soporte técnico post-venta: puedes escribirnos directo por WhatsApp para resolver dudas, reportar algo o pedir mejoras a tu sistema.</p>
+          </details>
+          <details class="faq-item">
+            <summary>
+              ¿Puedo empezar con un plan llave en mano y personalizarlo después?
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+              </span>
+            </summary>
+            <p>Sí. Muchos negocios empiezan con un sistema llave en mano para operar rápido, y más adelante le agregamos funcionalidades a medida conforme va creciendo la operación.</p>
+          </details>
+          <details class="faq-item">
+            <summary>
+              ¿Cómo se cotiza un proyecto?
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+              </span>
+            </summary>
+            <p>Cuéntanos sobre tu negocio por WhatsApp o mediante el formulario de contacto. Con esa información te enviamos una propuesta con alcance, tiempos estimados y siguientes pasos.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================  CONTACTO  ===================== -->
+    <section id="contacto" class="section">
+      <div class="container-x grid lg:grid-cols-2 gap-10 items-start">
+        <!-- Info -->
+        <div class="reveal">
+          <span class="eyebrow">Contacto</span>
+          <h2 class="mt-4 text-3xl md:text-4xl font-head font-bold">Cotiza tu software a medida hoy</h2>
+          <p class="text-muted mt-4 max-w-md">Cuéntanos sobre tu negocio y te enviamos una propuesta. Completa el formulario y continúa la conversación directo por WhatsApp.</p>
+
+          <!-- WhatsApp directo -->
+          <a href="https://wa.me/51924996961?text=Hola%20MAFC,%20quisiera%20cotizar%20un%20software%20a%20medida"
+             target="_blank" rel="noopener"
+             class="card flex items-center gap-4 p-5 mt-8 group">
+            <span class="w-12 h-12 rounded-xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm4.4 12c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.7.9-.1.1-.3.2-.5.1-.7-.3-1.4-.6-2-1.4-.2-.3.2-.3.5-.9.1-.2 0-.3 0-.5s-.5-1.3-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.7.7-.9 1.7-.5 2.7.5 1.4 1.5 2.6 2.9 3.4 1.9 1 1.9.7 2.3.7.5 0 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.1-.4-.2Z"/></svg>
+            </span>
+            <div>
+              <div class="font-semibold">WhatsApp directo</div>
+              <div class="text-muted text-sm">+51 924 996 961</div>
+            </div>
+            <svg class="ml-auto text-muted group-hover:text-accent transition" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+
+          <!-- Redes -->
+          <div class="mt-8">
+            <p class="text-muted text-sm mb-3">Síguenos en redes</p>
+            <div class="flex gap-3">
+              <a href="https://www.facebook.com/profile.php?id=61591894984374" target="_blank" rel="noopener" class="social" aria-label="Facebook de MAFC">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3l.5-3H14V4.5c0-.9.3-1.5 1.6-1.5H17V.3C16.7.2 15.8 0 14.7 0 12.3 0 11 1.4 11 4v2H8v3h3v9h3V9Z"/></svg>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener" class="social" aria-label="Instagram de MAFC">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+              </a>
+              <a href="https://tiktok.com" target="_blank" rel="noopener" class="social" aria-label="TikTok de MAFC">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 3c.3 2.1 1.5 3.6 3.6 4v2.7c-1.3.1-2.5-.3-3.6-1v5.6a5.7 5.7 0 1 1-5.7-5.7c.3 0 .6 0 .9.1v2.9a2.9 2.9 0 1 0 2 2.7V3H16Z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulario -->
+        <form id="contactForm" class="card p-6 md:p-8 reveal" data-delay="1" novalidate>
+          <div class="grid gap-5">
+            <div class="field">
+              <label for="nombre" class="block text-sm text-muted mb-2">Nombre completo</label>
+              <input id="nombre" name="nombre" type="text" class="input" placeholder="Ej. María Fernández" autocomplete="name" required />
+              <svg class="field-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <p class="field-msg"></p>
+            </div>
+
+            <div class="field">
+              <label for="telefono" class="block text-sm text-muted mb-2">Teléfono / WhatsApp</label>
+              <input id="telefono" name="telefono" type="tel" class="input" placeholder="Ej. +51 999 888 777" autocomplete="tel" required />
+              <svg class="field-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <p class="field-msg"></p>
+            </div>
+
+            <div class="field">
+              <label for="negocio" class="block text-sm text-muted mb-2">Tipo de negocio</label>
+              <select id="negocio" name="negocio" class="select" required>
+                <option value="" disabled selected>Selecciona una opción…</option>
+                <option>Óptica / Salud</option>
+                <option>Centro de Fisioterapia</option>
+                <option>Restaurante / Comida Rápida</option>
+                <option>Bodega / Minimarket</option>
+                <option>Retail / Comercio</option>
+                <option>Inventario / Multi-sucursal</option>
+                <option>Otro</option>
+              </select>
+              <p class="field-msg"></p>
+            </div>
+
+            <div class="field">
+              <label for="mensaje" class="block text-sm text-muted mb-2">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" rows="4" class="textarea" placeholder="Cuéntanos qué necesitas resolver en tu negocio…" required></textarea>
+              <p class="field-msg"></p>
+            </div>
+
+            <button id="submitBtn" type="submit" class="btn btn-wa w-full mt-1">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm4.4 12c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.7.9-.1.1-.3.2-.5.1-.7-.3-1.4-.6-2-1.4-.2-.3.2-.3.5-.9.1-.2 0-.3 0-.5s-.5-1.3-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.7.7-.9 1.7-.5 2.7.5 1.4 1.5 2.6 2.9 3.4 1.9 1 1.9.7 2.3.7.5 0 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.1-.4-.2Z"/></svg>
+              Enviar por WhatsApp
+            </button>
+            <p id="formFeedback" class="text-center text-sm" style="color:#16A34A" hidden>
+              ✓ Abrimos WhatsApp con tu mensaje listo para enviar.
+            </p>
+            <p class="text-center text-muted text-xs">Al enviar, se abrirá WhatsApp con tus datos precargados. No se almacena información.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================  FOOTER  ===================== -->
+  <footer class="border-t border-[#232c3a] pt-14 pb-8">
+    <div class="container-x">
+      <div class="grid md:grid-cols-3 gap-10">
+        <div>
+          <div class="flex items-center gap-3">
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-xl overflow-hidden shrink-0">
+              <img src="public/logo/logo.png" alt="Logo MAFC" width="40" height="40" loading="lazy" class="w-full h-full object-cover" />
+            </span>
+            <span class="font-head font-bold text-lg text-white">MAFC</span>
+          </div>
+          <p class="text-muted text-sm mt-4 max-w-xs">Soluciones Digitales &amp; Software a Medida. Diseñamos, desarrollamos e implementamos sistemas que hacen crecer tu negocio.</p>
+        </div>
+
+        <div>
+          <h4 class="font-head font-semibold text-white mb-4">Navegación</h4>
+          <ul class="space-y-2 text-sm text-muted">
+            <li><a href="#inicio" class="hover:text-white transition">Inicio</a></li>
+            <li><a href="#soluciones" class="hover:text-white transition">Soluciones</a></li>
+            <li><a href="#portafolio" class="hover:text-white transition">Portafolio</a></li>
+            <li><a href="#planes" class="hover:text-white transition">Planes</a></li>
+            <li><a href="#metodologia" class="hover:text-white transition">Metodología</a></li>
+            <li><a href="#faq" class="hover:text-white transition">Preguntas Frecuentes</a></li>
+            <li><a href="#contacto" class="hover:text-white transition">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-head font-semibold text-white mb-4">Contáctanos</h4>
+          <a href="https://wa.me/51924996961?text=Hola%20MAFC,%20quisiera%20cotizar%20un%20software%20a%20medida"
+             target="_blank" rel="noopener" class="text-muted text-sm hover:text-white transition block">WhatsApp: +51 924 996 961</a>
+          <div class="flex gap-3 mt-5">
+            <a href="https://www.facebook.com/profile.php?id=61591894984374" target="_blank" rel="noopener" class="social" aria-label="Facebook de MAFC">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3l.5-3H14V4.5c0-.9.3-1.5 1.6-1.5H17V.3C16.7.2 15.8 0 14.7 0 12.3 0 11 1.4 11 4v2H8v3h3v9h3V9Z"/></svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social" aria-label="Instagram de MAFC">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" class="social" aria-label="TikTok de MAFC">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 3c.3 2.1 1.5 3.6 3.6 4v2.7c-1.3.1-2.5-.3-3.6-1v5.6a5.7 5.7 0 1 1-5.7-5.7c.3 0 .6 0 .9.1v2.9a2.9 2.9 0 1 0 2 2.7V3H16Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <hr class="hr-glow my-8" />
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-muted text-xs">
+        <p>© <span id="year">2026</span> MAFC — Soluciones Digitales &amp; Software a Medida. Todos los derechos reservados.</p>
+        <p>Diseñado y desarrollado por MAFC · Software Studio</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================  BOTÓN FLOTANTE WHATSAPP  ===================== -->
+  <a href="https://wa.me/51924996961?text=Hola%20MAFC,%20quisiera%20cotizar%20un%20software%20a%20medida"
+     target="_blank" rel="noopener" class="wa-float" aria-label="Cotizar por WhatsApp">
+    <span class="wa-tooltip">Cotiza por WhatsApp</span>
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.7.9-.1.1-.3.2-.5.1-.7-.3-1.4-.6-2-1.4-.2-.3.2-.3.5-.9.1-.2 0-.3 0-.5s-.5-1.3-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.7.7-.9 1.7-.5 2.7.5 1.4 1.5 2.6 2.9 3.4 1.9 1 1.9.7 2.3.7.5 0 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.1-.4-.2Z"/></svg>
+  </a>
+
+  <!-- =====================  MODAL DE VIDEO  ===================== -->
+  <div id="videoModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-card">
+      <button class="modal-close" aria-label="Cerrar video">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round"/></svg>
+      </button>
+      <video id="modalVideo" controls playsinline preload="metadata" poster="public/img/ventas-bodegas.jpeg">
+        <source id="modalSource" src="" type="video/mp4" />
+        Tu navegador no soporta la reproducción de video.
+      </video>
+      <div class="p-5 border-t border-[#232c3a] flex items-center justify-between gap-4 flex-wrap">
+        <h3 id="modalTitle" class="font-head font-semibold">Demo del sistema</h3>
+        <a href="https://wa.me/51924996961?text=Hola%20MAFC,%20me%20interesa%20este%20sistema%20que%20vi%20en%20la%20demo"
+           target="_blank" rel="noopener" class="btn btn-wa btn-inline text-sm">Quiero este sistema</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================  MODAL DE IMAGEN (LIGHTBOX PORTAFOLIO)  ===================== -->
+  <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="imageModalTitle" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-card">
+      <button class="modal-close" aria-label="Cerrar imagen">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round"/></svg>
+      </button>
+      <div class="image-modal-media">
+        <img id="imageModalImg" alt="" />
+      </div>
+      <div class="p-5 border-t border-[#e3ecf6] flex flex-col gap-3">
+        <div id="imageModalTags" class="flex flex-wrap gap-2"></div>
+        <h3 id="imageModalTitle" class="font-head font-semibold text-lg"></h3>
+        <p id="imageModalDesc" class="text-muted text-sm"></p>
+        <a href="https://wa.me/51924996961?text=Hola%20MAFC,%20me%20interesa%20este%20sistema%20que%20vi%20en%20el%20portafolio"
+           target="_blank" rel="noopener" class="btn btn-wa btn-inline text-sm w-fit mt-1">Quiero un sistema similar</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>
