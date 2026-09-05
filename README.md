@@ -13,6 +13,7 @@ MAFC_Web_Corporativa/
 ├── index.html          # Página única (landing) con todas las secciones
 ├── robots.txt          # Indexación para buscadores
 ├── sitemap.xml         # Mapa del sitio (SEO)
+├── vercel.json         # Config de despliegue (ver sección "Despliegue en Vercel")
 ├── css/
 │   └── main.css        # Estilos personalizados: tarjetas, bordes reactivos, responsive
 ├── js/
@@ -52,6 +53,29 @@ python3 -m http.server 8080
 # luego visita http://localhost:8080
 ```
 
+## Despliegue en Vercel
+
+El sitio está desplegado en **https://mafcsoluciones.vercel.app**
+(proyecto `mafcsoluciones` en la cuenta de Vercel, conectado al repo de
+GitHub `ALEXCHUYE14/MAFC_Web_Corporativa`).
+
+⚠️ **`vercel.json` es obligatorio** en este proyecto: por convención, Vercel
+sirve el contenido de la carpeta `public/` como raíz del sitio *si esa
+carpeta existe* — pero aquí `public/` solo contiene el logo y las capturas
+del portafolio, no el `index.html`. `vercel.json` fuerza
+`"outputDirectory": "."` para que Vercel sirva la raíz real del proyecto.
+Si borras ese archivo, el sitio dejará de funcionar (mostrará 404).
+
+Para volver a desplegar manualmente:
+
+```bash
+vercel --prod
+```
+
+Como el repo de GitHub quedó conectado al proyecto, cualquier `git push` a
+la rama principal también puede disparar un despliegue automático desde
+Vercel.
+
 ## Empaquetar para entrega
 
 ```bash
@@ -71,11 +95,13 @@ Se dejaron **dos marcadores de posición** porque son datos que solo tú tienes:
    y funcionando (incluye eventos personalizados `whatsapp_click` en todos los
    botones de WhatsApp y `generate_lead` al enviar el formulario de contacto).
 
-2. **Dominio final** — se usó `https://www.mafcsoluciones.pe/` como
-   marcador en: el `<link rel="canonical">`, las etiquetas `og:url` /
-   `og:image` / `twitter:image`, los datos estructurados (JSON-LD),
-   `robots.txt` y `sitemap.xml`. Reemplázalo por tu dominio real con
-   buscar-y-reemplazar en esos archivos antes de publicar.
+2. **Dominio** — el sitio está desplegado en
+   `https://mafcsoluciones.vercel.app/`, y ese es el dominio usado en el
+   `<link rel="canonical">`, las etiquetas `og:url` / `og:image` /
+   `twitter:image`, los datos estructurados (JSON-LD), `robots.txt` y
+   `sitemap.xml`. Si más adelante conectas un dominio propio (ej.
+   `mafcsoluciones.pe`) en Vercel, reemplaza esta URL por la nueva con
+   buscar-y-reemplazar en esos mismos archivos.
 
 **Redes sociales:** Facebook ya apunta a tu página real
 (`facebook.com/profile.php?id=61591894984374`) en el footer, la sección de
@@ -119,10 +145,10 @@ perfiles reales cuando los tengas, o quita esos íconos mientras tanto.
   negocios que ya usan un sistema de MAFC — sin testimonios inventados.
 - **Badges de confianza** (en Portafolio): "Sistemas reales en producción",
   "Código propio, sin plantillas", "Soporte directo con quien lo construye".
-- **Planes** (`#planes`, en el menú): 3 tarjetas por alcance (Llave en Mano /
-  Desarrollo a Medida / Multi-sucursal) con checklist de qué incluye cada
-  una. Sin precios inventados — cada botón "Cotizar este plan" abre WhatsApp
-  con el nombre del plan precargado.
+- **Planes** (`#planes`, en el menú): 3 tarjetas por alcance (Llave en Mano
+  S/400 · Desarrollo a Medida S/500 · Multi-sucursal S/600, precios "desde")
+  con checklist de qué incluye cada una. Cada botón "Cotizar este plan" abre
+  WhatsApp con el nombre del plan precargado.
 - **Preguntas Frecuentes** (`#faq`, enlazada desde el footer): acordeón
   hecho con `<details>`/`<summary>` nativo de HTML (cero JavaScript, cero
   riesgo de bugs de animación).
@@ -138,8 +164,6 @@ perfiles reales cuando los tengas, o quita esos íconos mientras tanto.
   "Antojitos al Paso" o "Comercial Ruiz" sería una reseña falsa a nombre de
   un tercero real — no lo voy a hacer. Si consigues 2-3 frases cortas
   autorizadas por tus clientes, con gusto arma la sección con citas reales.
-- **Precios exactos en Planes**: no conozco tus tarifas reales, así que el
-  plan se vende por alcance/checklist en vez de un número inventado.
 - **Blog / casos de estudio con métricas** ("aumentó ventas 30%"): no tengo
   esos datos verificados; en su lugar se reforzó el Portafolio y se agregó
   el FAQ, que cubren gran parte del mismo objetivo de SEO y confianza.

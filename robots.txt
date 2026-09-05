@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.mafcsoluciones.pe/sitemap.xml
+Sitemap: https://mafcsoluciones.vercel.app/sitemap.xml

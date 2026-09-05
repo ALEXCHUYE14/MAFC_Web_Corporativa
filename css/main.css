@@ -79,6 +79,13 @@ img, svg, video { display: block; max-width: 100%; }
   --muted: var(--muted-invert);
 }
 
+/* El footer es una franja azul marino (antes se quedaba sin fondo propio
+   y heredaba el blanco de <body>, dejando su texto blanco invisible). */
+footer {
+  background: var(--navy);
+  color: var(--text-invert);
+}
+
 /* ------- Franjas alternas suaves (ritmo visual sin gradientes ruidosos) ------- */
 #soluciones, #metodologia { background: var(--bg-soft); }
 

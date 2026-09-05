@@ -29,6 +29,7 @@ INCLUDE = [
     "README.md",
     "robots.txt",
     "sitemap.xml",
+    "vercel.json",         # config de despliegue (evita que Vercel sirva solo /public)
     "css",
     "js",
     "assets",
