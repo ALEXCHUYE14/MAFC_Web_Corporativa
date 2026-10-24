@@ -89,9 +89,9 @@ Genera `MAFC_Web_Corporativa.zip` con todos los archivos del sitio (incluye `pub
 Se dejaron **dos marcadores de posición** porque son datos que solo tú tienes:
 
 1. **Google Analytics 4** — en `index.html` (dentro de `<head>`) busca
-   `var GA_ID = 'G-XXXXXXXXXX'` y reemplázalo por tu Measurement ID real
-   (es el único lugar). Mientras siga el marcador, el script de Google no se
-   carga (sin errores en consola). Eventos que se registran:
+   ✅ Configurado con el ID `G-BWZBS346LN` (variable `GA_ID`, único lugar).
+   Para cambiarlo, edita solo el valor de `GA_ID` — no uses "reemplazar
+   todo", la línea de abajo valida el formato. Eventos que se registran:
    `whatsapp_click`, `generate_lead`, `portfolio_image_view`,
    `video_play` (con `video_mode` = `inline` o `modal`) y `youtube_click`.
    Lo obtienes en [analytics.google.com](https://analytics.google.com) →

@@ -54,17 +54,16 @@
   <link rel="preconnect" href="https://i.ytimg.com" />
   <link rel="preload" as="image" href="public/img/ventas-bodegas.jpeg" fetchpriority="high" />
 
-  <!-- Google Analytics 4
-       ⚠️ Reemplaza G-XXXXXXXXXX por tu Measurement ID real (ver README.md).
-       Es el ÚNICO lugar donde debes cambiarlo. Mientras siga el marcador,
-       el script de Google no se carga (así no hay errores en consola ni
-       datos basura), pero los eventos del sitio siguen funcionando sin fallar. -->
+  <!-- Google Analytics 4 · Measurement ID de MAFC Software EIRL.
+       Para cambiarlo, edita SOLO el valor de GA_ID (ver README.md). Si el
+       valor no tiene formato válido, el script de Google no se carga y los
+       eventos del sitio siguen funcionando sin fallar. -->
   <script>
     (function () {
       var GA_ID = 'G-BWZBS346LN';
       window.dataLayer = window.dataLayer || [];
       window.gtag = function () { window.dataLayer.push(arguments); };
-      if (!/^G-[A-Z0-9]{6,}$/.test(GA_ID) || GA_ID === 'G-BWZBS346LN') return;
+      if (!/^G-[A-Z0-9]{6,}$/.test(GA_ID) || GA_ID.indexOf('XXXX') !== -1) return;
       var s = document.createElement('script');
       s.async = true;
       s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
