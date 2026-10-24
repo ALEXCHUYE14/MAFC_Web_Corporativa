@@ -1,7 +1,8 @@
 /* =====================================================================
-   MAFC — main.js · JavaScript Vanilla ES6+
+   MAFC Software E.I.R.L. — main.js · JavaScript Vanilla ES6+
    Navbar inteligente · Menú móvil · Reveal on scroll · Bordes reactivos
-   Filtro de portafolio · Modales de video · Formulario + WhatsApp
+   Filtro de portafolio · Modales de video · Videos de YouTube
+   Formulario + WhatsApp · Eventos de Google Analytics
    ===================================================================== */
 (() => {
   'use strict';
@@ -18,6 +19,7 @@
     initPortfolioFilter();
     initVideoModal();
     initImageLightbox();
+    initYouTube();
     initContactForm();
     initFooterYear();
     initAnalyticsEvents();
@@ -39,6 +41,16 @@
         const host = link.closest('section, header, footer');
         trackEvent('whatsapp_click', {
           link_location: link.dataset.section || (host && host.id) || 'page'
+        });
+      });
+    });
+
+    $$('a[href*="youtube.com"]').forEach(link => {
+      link.addEventListener('click', () => {
+        const host = link.closest('section, header, footer');
+        trackEvent('youtube_click', {
+          video_id: link.dataset.ytLink || '',
+          link_location: (host && host.id) || 'page'
         });
       });
     });
@@ -262,6 +274,102 @@
   }
 
   /* -------------------------------------------------------------------
+     6c. Videos de YouTube: cada tarjeta muestra solo la miniatura (rápido)
+         y el reproductor se crea al hacer clic. Tres formas de verlo:
+         · Reproducir      → dentro de la misma tarjeta (miniatura)
+         · Pantalla grande → modal amplio (con botón de pantalla completa)
+         · YouTube         → abre el video en el canal (enlace normal)
+         Solo un video suena a la vez.
+  ------------------------------------------------------------------- */
+  function initYouTube() {
+    const players = $$('.yt-player[data-yt-id]');
+    if (!players.length) return;
+
+    const ID_RE = /^[A-Za-z0-9_-]{11}$/;
+    const originals = new Map(players.map(p => [p, p.innerHTML]));
+
+    const buildIframe = (id, title) => {
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+      iframe.title = title || 'Video de MAFC Software';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.setAttribute('allowfullscreen', '');
+      return iframe;
+    };
+
+    const stopInline = (except) => {
+      players.forEach(p => {
+        if (p !== except && p.classList.contains('playing')) {
+          p.innerHTML = originals.get(p);
+          p.classList.remove('playing');
+        }
+      });
+    };
+
+    const playInline = (id) => {
+      const player = players.find(p => p.dataset.ytId === id);
+      if (!player || !ID_RE.test(id)) return;
+      stopInline(player);
+      if (player.classList.contains('playing')) return;
+      player.innerHTML = '';
+      player.appendChild(buildIframe(id, player.dataset.ytTitle));
+      player.classList.add('playing');
+      trackEvent('video_play', { video_id: id, video_mode: 'inline', video_title: player.dataset.ytTitle || '' });
+    };
+
+    // Delegación: las miniaturas se recrean al detener un video
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-yt-inline]');
+      if (btn) playInline(btn.dataset.ytInline);
+    });
+
+    // Modal "pantalla grande"
+    const modal = $('#ytModal');
+    if (!modal) return;
+    const frame    = $('#ytModalFrame');
+    const titleEl  = $('#ytModalTitle');
+    const linkEl   = $('#ytModalLink');
+    const backdrop = $('.modal-backdrop', modal);
+    const closeBtn = $('.modal-close', modal);
+    let lastFocus = null;
+
+    const open = (id, title) => {
+      if (!ID_RE.test(id) || !frame) return;
+      stopInline(null);
+      lastFocus = document.activeElement;
+      frame.innerHTML = '';
+      frame.appendChild(buildIframe(id, title));
+      if (titleEl) titleEl.textContent = title || 'Video';
+      if (linkEl) {
+        linkEl.href = `https://www.youtube.com/watch?v=${id}`;
+        linkEl.dataset.ytLink = id;
+      }
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      closeBtn && closeBtn.focus();
+      trackEvent('video_play', { video_id: id, video_mode: 'modal', video_title: title || '' });
+    };
+
+    const close = () => {
+      if (!modal.classList.contains('open')) return;
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (frame) frame.innerHTML = '';   // detiene el audio por completo
+      if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+    };
+
+    $$('[data-yt-modal]').forEach(btn => {
+      btn.addEventListener('click', () => open(btn.dataset.ytModal, btn.dataset.ytTitle));
+    });
+    closeBtn && closeBtn.addEventListener('click', close);
+    backdrop && backdrop.addEventListener('click', close);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  }
+
+  /* -------------------------------------------------------------------
      7. Formulario de contacto: validación en tiempo real + WhatsApp
   ------------------------------------------------------------------- */
   function initContactForm() {
@@ -315,7 +423,7 @@
       };
 
       const text =
-        `Hola MAFC 👋, soy *${data.nombre}*.\n` +
+        `Hola MAFC Software 👋, soy *${data.nombre}*.\n` +
         `📱 Teléfono/WhatsApp: ${data.telefono}\n` +
         `🏢 Tipo de negocio: ${data.negocio}\n` +
         `📝 Mensaje: ${data.mensaje}\n\n` +
@@ -326,7 +434,8 @@
       trackEvent('generate_lead', { negocio: data.negocio, form_id: 'contactForm' });
 
       const btn = $('#submitBtn', form);
-      if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent; btn.textContent = 'Abriendo WhatsApp…'; }
+      const btnHTML = btn ? btn.innerHTML : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Abriendo WhatsApp…'; }
 
       window.open(url, '_blank', 'noopener');
 
@@ -335,7 +444,7 @@
       setTimeout(() => {
         form.reset();
         Object.values(fields).forEach(f => f.classList.remove('valid', 'invalid'));
-        if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label || 'Enviar por WhatsApp'; }
+        if (btn) { btn.disabled = false; btn.innerHTML = btnHTML; }
       }, 1200);
     });
   }

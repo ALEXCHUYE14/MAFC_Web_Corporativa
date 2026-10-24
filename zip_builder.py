@@ -29,6 +29,8 @@ INCLUDE = [
     "README.md",
     "robots.txt",
     "sitemap.xml",
+    "site.webmanifest",
+    "google296ab0654b1cb216.html",  # verificación de Google Search Console (no borrar)
     "vercel.json",         # config de despliegue (evita que Vercel sirva solo /public)
     "css",
     "js",

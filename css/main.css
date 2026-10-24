@@ -1,5 +1,5 @@
 /* =====================================================================
-   MAFC — Soluciones Digitales & Software a Medida
+   MAFC Software E.I.R.L. — Desarrollo de Software a Medida
    main.css · Estilos personalizados "Corporate Blue & White"
    Complementa a Tailwind (CDN). Aquí vive todo lo que Tailwind no cubre:
    tipografías, tarjetas, bordes reactivos al cursor, keyframes,
@@ -87,7 +87,7 @@ footer {
 }
 
 /* ------- Franjas alternas suaves (ritmo visual sin gradientes ruidosos) ------- */
-#soluciones, #metodologia { background: var(--bg-soft); }
+#soluciones, #metodologia, #nosotros { background: var(--bg-soft); }
 
 /* ------- Superficies ------- */
 .surface {
@@ -267,6 +267,8 @@ footer {
 .mobile-panel.open .mobile-link:nth-child(4){ transition-delay:.24s; }
 .mobile-panel.open .mobile-link:nth-child(5){ transition-delay:.30s; }
 .mobile-panel.open .mobile-link:nth-child(6){ transition-delay:.36s; }
+.mobile-panel.open .mobile-link:nth-child(7){ transition-delay:.42s; }
+.mobile-panel.open .mobile-link:nth-child(8){ transition-delay:.48s; }
 .mobile-link:hover { color: var(--accent-2); }
 
 /* Hamburguesa animada (siempre sobre fondo azul marino) */
@@ -497,6 +499,102 @@ footer {
 .faq-item[open] .faq-icon { transform: rotate(45deg); }
 .faq-item p { padding: 0 1.4rem 1.25rem; margin: 0; color: var(--muted); font-size: .92rem; }
 
+/* ------- Texto fuerte dentro de párrafos atenuados (secciones claras) ------- */
+.text-strong { color: var(--text); font-weight: 700; }
+
+/* ------- Botón YouTube ------- */
+.btn-yt {
+  border: none; color: #fff;
+  background: linear-gradient(120deg, #dc2626, #ef4444);
+  box-shadow: 0 10px 26px -12px rgba(220, 38, 38, .5);
+}
+.btn-yt:hover { box-shadow: 0 0 0 1px rgba(239, 68, 68, .4), 0 16px 36px -14px rgba(220, 38, 38, .55); }
+
+/* ------- Videos de YouTube (fachada liviana: el iframe solo se carga al
+   hacer clic, así la página sigue siendo rápida y buena para SEO) ------- */
+.yt-card { display: flex; flex-direction: column; }
+.yt-player { position: relative; aspect-ratio: 16 / 9; background: var(--navy); overflow: hidden; }
+.yt-player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.yt-thumb {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  padding: 0; border: none; background: none; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.yt-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
+.yt-thumb::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(11,18,32,0) 40%, rgba(11,18,32,.45));
+  transition: background .3s var(--ease);
+}
+.yt-thumb:hover img, .yt-thumb:focus-visible img { transform: scale(1.05); }
+.yt-play {
+  position: absolute; inset: 0; margin: auto; z-index: 1;
+  width: 68px; height: 48px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(220, 38, 38, .92); color: #fff;
+  box-shadow: 0 12px 28px -10px rgba(0,0,0,.6);
+  transition: transform .3s var(--ease), background .3s;
+}
+.yt-thumb:hover .yt-play, .yt-thumb:focus-visible .yt-play { transform: scale(1.1); background: #dc2626; }
+.yt-featured .yt-player { height: 100%; }
+.yt-featured .yt-play { width: 84px; height: 60px; }
+
+.yt-actions { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1rem; }
+.yt-btn {
+  display: inline-flex; align-items: center; gap: .35rem;
+  font-size: .76rem; font-weight: 600; line-height: 1;
+  padding: .55rem .6rem; border-radius: 10px; cursor: pointer;
+  color: var(--accent); background: rgba(var(--accent-rgb), .06);
+  border: 1px solid rgba(var(--accent-rgb), .24);
+  transition: background .25s var(--ease), border-color .25s var(--ease), transform .25s var(--ease);
+  white-space: nowrap;
+}
+.yt-btn:hover { background: rgba(var(--accent-rgb), .12); border-color: rgba(var(--accent-rgb), .5); transform: translateY(-1px); }
+.yt-btn-red { color: #dc2626; background: rgba(220, 38, 38, .06); border-color: rgba(220, 38, 38, .25); }
+.yt-btn-red:hover { background: rgba(220, 38, 38, .12); border-color: rgba(220, 38, 38, .5); }
+
+/* Modal de YouTube: más ancho para ver la demo en pantalla grande */
+.modal-card-xl { width: min(1180px, 100%); }
+.yt-modal-frame { position: relative; aspect-ratio: 16 / 9; background: #000; max-height: 78vh; width: 100%; }
+.yt-modal-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* ------- Nosotros / Fundador ------- */
+.founder-photo {
+  position: relative; margin: 0 auto; border-radius: 24px; overflow: hidden;
+  aspect-ratio: 4 / 5; background: #fff; max-width: 460px;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 30px 60px -30px rgba(15, 23, 42, .35);
+}
+.founder-photo::before {  /* marco con degradado de marca */
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(var(--accent-rgb), .18);
+}
+.founder-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
+.founder-tag {
+  position: absolute; left: 1rem; right: 1rem; bottom: 1rem; z-index: 2;
+  display: flex; flex-direction: column; gap: .1rem;
+  padding: .85rem 1.1rem; border-radius: 16px;
+  background: rgba(11, 18, 32, .82); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, .12);
+}
+.founder-quote {
+  margin: 0; padding: 1.25rem 1.4rem; border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--border-soft);
+  border-left: 3px solid var(--accent);
+  font-style: italic; color: var(--text); font-size: .98rem;
+}
+.founder-quote-by { display: block; margin-top: .75rem; font-size: .85rem; font-style: normal; color: var(--muted); }
+.founder-stat {
+  display: flex; flex-direction: column; gap: .2rem; padding: 1rem;
+  background: var(--surface); border: 1px solid var(--border-soft); border-radius: 14px;
+}
+.founder-stat-num { font-family: var(--font-head); font-weight: 700; font-size: 1.5rem; color: var(--accent); line-height: 1.1; }
+.tech-chip {
+  font-size: .78rem; font-weight: 600; color: var(--text);
+  background: var(--surface); border: 1px solid var(--border-soft);
+  border-radius: 10px; padding: .4rem .75rem;
+}
+
 /* ------- Scrollbar ------- */
 ::-webkit-scrollbar { width: 11px; height: 11px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
@@ -554,17 +652,23 @@ footer {
 @media (max-width: 1024px) {
   .container-x { max-width: 100%; }
 }
-@media (min-width: 768px) {
+/* El menú tiene 7 enlaces: se muestra completo desde 1024px para que
+   nunca se desborde en tablets; por debajo se usa el menú hamburguesa. */
+@media (min-width: 1024px) {
   .desktop-nav { display: flex; }
   .mobile-trigger { display: none; }
 }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .desktop-nav { display: none; }
+}
+@media (max-width: 767px) {
   .section { padding-block: clamp(3rem, 12vw, 4.5rem); }
   .modal { padding: .75rem; }
 }
 @media (max-width: 640px) {
   h1 { line-height: 1.1; }
+  .founder-stat { padding: .75rem; }
+  .founder-stat-num { font-size: 1.2rem; }
   .wa-float { width: 54px; height: 54px; right: 16px; bottom: 16px; }
   .btn { width: 100%; justify-content: center; }
   .btn.btn-inline { width: auto; }

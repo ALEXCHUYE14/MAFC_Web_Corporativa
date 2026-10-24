@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
-    <loc>https://mafcsoluciones.vercel.app/</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://mafcsoftwareeirl.vercel.app/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image><image:loc>https://mafcsoftwareeirl.vercel.app/assets/og-image.jpg</image:loc></image:image>
+    <image:image><image:loc>https://mafcsoftwareeirl.vercel.app/public/img/equipo/miguel-flores.jpg</image:loc></image:image>
+    <image:image><image:loc>https://mafcsoftwareeirl.vercel.app/public/img/gestion-opticas.png</image:loc></image:image>
+    <image:image><image:loc>https://mafcsoftwareeirl.vercel.app/public/img/pos-restaurantes.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://mafcsoftwareeirl.vercel.app/public/img/control-inventarios.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://mafcsoftwareeirl.vercel.app/public/img/gestion-fisioterapia.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://mafcsoftwareeirl.vercel.app/public/img/ventas-bodegas.jpeg</image:loc></image:image>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/UoLMCAzx3NM/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>MAFC Restaurant: sistema POS para restaurantes (demo completa)</video:title>
+      <video:description>Demo paso a paso de MAFC Restaurant, el sistema POS de MAFC Software que conecta meseros, cocina y caja en tiempo real.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/UoLMCAzx3NM</video:player_loc>
+      <video:publication_date>2026-10-20T17:28:26+00:00</video:publication_date>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/CNvMaLKxeQY/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>POS en la nube con Next.js + Supabase</video:title>
+      <video:description>Sistema POS en la nube para bodegas con boletas, IGV 18% y ventas en tiempo real, desarrollado por MAFC Software.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/CNvMaLKxeQY</video:player_loc>
+      <video:publication_date>2026-10-14T04:25:52+00:00</video:publication_date>
+    </video:video>
   </url>
 </urlset>

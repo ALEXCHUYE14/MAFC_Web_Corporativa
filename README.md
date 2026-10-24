@@ -1,6 +1,6 @@
-# MAFC — Web Corporativa
+# MAFC Software E.I.R.L. — Web Corporativa
 
-Sitio web corporativo de **MAFC · Soluciones Digitales & Software a Medida**.
+Sitio web corporativo de **MAFC Software E.I.R.L.** (antes "MAFC Soluciones").
 Estilo *Corporate Blue & White* (navbar/hero/footer en azul marino, resto del
 sitio en blanco/celeste claro), construido con **HTML5 semántico + Tailwind
 CSS (CDN) + JavaScript Vanilla ES6+**. Sin dependencias de build: se abre
@@ -55,7 +55,7 @@ python3 -m http.server 8080
 
 ## Despliegue en Vercel
 
-El sitio está desplegado en **https://mafcsoluciones.vercel.app**
+El sitio está desplegado en **https://mafcsoftwareeirl.vercel.app**
 (proyecto `mafcsoluciones` en la cuenta de Vercel, conectado al repo de
 GitHub `ALEXCHUYE14/MAFC_Web_Corporativa`).
 
@@ -89,14 +89,18 @@ Genera `MAFC_Web_Corporativa.zip` con todos los archivos del sitio (incluye `pub
 Se dejaron **dos marcadores de posición** porque son datos que solo tú tienes:
 
 1. **Google Analytics 4** — en `index.html` (dentro de `<head>`) busca
-   `G-XXXXXXXXXX` (aparece 2 veces) y reemplázalo por tu Measurement ID real.
+   `var GA_ID = 'G-XXXXXXXXXX'` y reemplázalo por tu Measurement ID real
+   (es el único lugar). Mientras siga el marcador, el script de Google no se
+   carga (sin errores en consola). Eventos que se registran:
+   `whatsapp_click`, `generate_lead`, `portfolio_image_view`,
+   `video_play` (con `video_mode` = `inline` o `modal`) y `youtube_click`.
    Lo obtienes en [analytics.google.com](https://analytics.google.com) →
    Administrar → Flujos de datos → tu flujo web. El código ya está integrado
    y funcionando (incluye eventos personalizados `whatsapp_click` en todos los
    botones de WhatsApp y `generate_lead` al enviar el formulario de contacto).
 
 2. **Dominio** — el sitio está desplegado en
-   `https://mafcsoluciones.vercel.app/`, y ese es el dominio usado en el
+   `https://mafcsoftwareeirl.vercel.app/`, y ese es el dominio usado en el
    `<link rel="canonical">`, las etiquetas `og:url` / `og:image` /
    `twitter:image`, los datos estructurados (JSON-LD), `robots.txt` y
    `sitemap.xml`. Si más adelante conectas un dominio propio (ej.
@@ -175,3 +179,40 @@ perfiles reales cuando los tengas, o quita esos íconos mientras tanto.
   puedo hacerlo en una siguiente iteración dedicada si lo necesitas.
 - **Core Web Vitals**: no es algo que se "implemente" en el código, se mide
   después de publicar en [PageSpeed Insights](https://pagespeed.web.dev).
+
+## Tercera ronda: MAFC Software E.I.R.L.
+
+- **Nueva marca** en todo el sitio: título, navbar, hero, footer, mensajes de
+  WhatsApp precargados y datos estructurados ("MAFC Software EIRL",
+  "MAFC Software E.I.R.L.", "MAFC Software").
+- **Sección Videos** (`#videos`): video destacado + 6 videos reales del canal
+  [@MiguelfloresDev](https://www.youtube.com/@MiguelfloresDev). Cada video se
+  puede *Reproducir* dentro de la tarjeta, abrir en *Pantalla grande* (modal
+  con botón de pantalla completa) o ir a *YouTube*. Solo se carga la
+  miniatura hasta que el usuario hace clic (página rápida). Para cambiar
+  videos: edita los `data-yt-id` en `index.html` (y sus `VideoObject` en el
+  JSON-LD y `sitemap.xml`).
+- **Sección Nosotros** (`#nosotros`) con la foto del fundador en
+  `public/img/equipo/miguel-flores.jpg`.
+- **SEO**: JSON-LD `@graph` (Organization, Person, WebSite, WebPage,
+  VideoObject, FAQPage), robots avanzados, `site.webmanifest`, sitemap con
+  imágenes y videos.
+- **Íconos de Instagram/TikTok** (que apuntaban a páginas genéricas) se
+  reemplazaron por el canal de YouTube real.
+
+### Para aparecer en Google al buscar "MAFC Software"
+
+1. Crea la propiedad en [Google Search Console](https://search.google.com/search-console),
+   pega tu código en la meta `google-site-verification` (comentada en el
+   `<head>`), despliega y envía `sitemap.xml`. Luego usa "Inspeccionar URL →
+   Solicitar indexación".
+2. Recomendado: un dominio propio con la marca (ej. `mafcsoftware.com` o
+   `mafcsoftware.pe`). Al conectarlo, reemplaza `mafcsoluciones.vercel.app`
+   en `index.html`, `robots.txt` y `sitemap.xml`.
+3. Crea un **Perfil de Empresa en Google** (Google Business Profile) con el
+   nombre "MAFC Software EIRL" y enlaza esta web y el canal de YouTube.
+4. En la descripción de cada video de YouTube, agrega el enlace a la web.
+
+> Nota: abrir `index.html` con doble clic (`file://`) puede mostrar error en
+> los videos de YouTube; pruébalo con `python -m http.server 8080` o ya
+> desplegado en Vercel.
