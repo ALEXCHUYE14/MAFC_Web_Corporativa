@@ -56,7 +56,7 @@ python3 -m http.server 8080
 ## Despliegue en Vercel
 
 El sitio está desplegado en **https://mafcsoftwareeirl.vercel.app**
-(proyecto `mafcsoluciones` en la cuenta de Vercel, conectado al repo de
+(proyecto `mafcsoftwareeirl` en Vercel, antes `mafcsoluciones`; conectado al repo de
 GitHub `ALEXCHUYE14/MAFC_Web_Corporativa`).
 
 ⚠️ **`vercel.json` es obligatorio** en este proyecto: por convención, Vercel
@@ -207,7 +207,7 @@ perfiles reales cuando los tengas, o quita esos íconos mientras tanto.
    `<head>`), despliega y envía `sitemap.xml`. Luego usa "Inspeccionar URL →
    Solicitar indexación".
 2. Recomendado: un dominio propio con la marca (ej. `mafcsoftware.com` o
-   `mafcsoftware.pe`). Al conectarlo, reemplaza `mafcsoluciones.vercel.app`
+   `mafcsoftware.pe`). Al conectarlo, reemplaza `mafcsoftwareeirl.vercel.app`
    en `index.html`, `robots.txt` y `sitemap.xml`.
 3. Crea un **Perfil de Empresa en Google** (Google Business Profile) con el
    nombre "MAFC Software EIRL" y enlaza esta web y el canal de YouTube.
