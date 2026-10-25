@@ -275,10 +275,10 @@
 
   /* -------------------------------------------------------------------
      6c. Videos de YouTube: cada tarjeta muestra solo la miniatura (rápido)
-         y el reproductor se crea al hacer clic. Tres formas de verlo:
-         · Reproducir      → dentro de la misma tarjeta (miniatura)
-         · Pantalla grande → modal amplio (con botón de pantalla completa)
-         · YouTube         → abre el video en el canal (enlace normal)
+         y el reproductor se crea al hacer clic. Dos formas de verlo:
+         · Reproducir → dentro de la misma tarjeta (con el botón de
+           pantalla completa propio de YouTube)
+         · YouTube    → abre el video en el canal (enlace normal)
          Solo un video suena a la vez.
   ------------------------------------------------------------------- */
   function initYouTube() {
@@ -323,50 +323,6 @@
       const btn = e.target.closest('[data-yt-inline]');
       if (btn) playInline(btn.dataset.ytInline);
     });
-
-    // Modal "pantalla grande"
-    const modal = $('#ytModal');
-    if (!modal) return;
-    const frame    = $('#ytModalFrame');
-    const titleEl  = $('#ytModalTitle');
-    const linkEl   = $('#ytModalLink');
-    const backdrop = $('.modal-backdrop', modal);
-    const closeBtn = $('.modal-close', modal);
-    let lastFocus = null;
-
-    const open = (id, title) => {
-      if (!ID_RE.test(id) || !frame) return;
-      stopInline(null);
-      lastFocus = document.activeElement;
-      frame.innerHTML = '';
-      frame.appendChild(buildIframe(id, title));
-      if (titleEl) titleEl.textContent = title || 'Video';
-      if (linkEl) {
-        linkEl.href = `https://www.youtube.com/watch?v=${id}`;
-        linkEl.dataset.ytLink = id;
-      }
-      modal.classList.add('open');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      closeBtn && closeBtn.focus();
-      trackEvent('video_play', { video_id: id, video_mode: 'modal', video_title: title || '' });
-    };
-
-    const close = () => {
-      if (!modal.classList.contains('open')) return;
-      modal.classList.remove('open');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-      if (frame) frame.innerHTML = '';   // detiene el audio por completo
-      if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
-    };
-
-    $$('[data-yt-modal]').forEach(btn => {
-      btn.addEventListener('click', () => open(btn.dataset.ytModal, btn.dataset.ytTitle));
-    });
-    closeBtn && closeBtn.addEventListener('click', close);
-    backdrop && backdrop.addEventListener('click', close);
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
   }
 
   /* -------------------------------------------------------------------

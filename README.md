@@ -93,7 +93,7 @@ Se dejaron **dos marcadores de posición** porque son datos que solo tú tienes:
    Para cambiarlo, edita solo el valor de `GA_ID` — no uses "reemplazar
    todo", la línea de abajo valida el formato. Eventos que se registran:
    `whatsapp_click`, `generate_lead`, `portfolio_image_view`,
-   `video_play` (con `video_mode` = `inline` o `modal`) y `youtube_click`.
+   `video_play` y `youtube_click`.
    Lo obtienes en [analytics.google.com](https://analytics.google.com) →
    Administrar → Flujos de datos → tu flujo web. El código ya está integrado
    y funcionando (incluye eventos personalizados `whatsapp_click` en todos los
@@ -187,8 +187,8 @@ perfiles reales cuando los tengas, o quita esos íconos mientras tanto.
   "MAFC Software E.I.R.L.", "MAFC Software").
 - **Sección Videos** (`#videos`): video destacado + 6 videos reales del canal
   [@MiguelfloresDev](https://www.youtube.com/@MiguelfloresDev). Cada video se
-  puede *Reproducir* dentro de la tarjeta, abrir en *Pantalla grande* (modal
-  con botón de pantalla completa) o ir a *YouTube*. Solo se carga la
+  puede *Reproducir* dentro de la tarjeta (con pantalla completa de YouTube)
+  o ir a *YouTube*. Solo se carga la
   miniatura hasta que el usuario hace clic (página rápida). Para cambiar
   videos: edita los `data-yt-id` en `index.html` (y sus `VideoObject` en el
   JSON-LD y `sitemap.xml`).
